@@ -29,9 +29,9 @@ To deinstall a service:
 (WinService serviceName: 'MyService')
     deinstallService
 ```
-which is equivalent to entering "sc delete MyService" in a shell.
+which is equivalent to entering `sc delete MyService` in a shell.
 
-The executable is running with system32 / SysWOW64 as current directory, 
+The current directory of the image is `%SYSTEMROOT%\system32` or `%SYSTEMROOT%\SysWOW64`,
 so you might want to change the current directory on startup, e.g.
 ```
 CEnvironment commandLine first asFilename directory beCurrentDirectory.
